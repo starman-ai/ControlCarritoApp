@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:columnCount="3"
+        android:rowCount="4"
+        android:padding="16dp"
+        tools:ignore="UselessParent">
+
+    <!-- Fila 1 -->
+        <Button
+            android:id="@+id/buttonForward"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@drawable/circle"
+            android:contentDescription="@string/forwardbtn"
+            android:drawableTop="@drawable/forward"
+            tools:ignore="RedundantDescriptionCheck" />
+
+    <!-- Fila 2 -->
+        <Button
+            android:id="@+id/buttonLeft"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@drawable/circle"
+            android:contentDescription="@string/leftbtn"
+            android:drawableTop="@drawable/left"
+            tools:ignore="RedundantDescriptionCheck" />
+
+        <Button
+            android:id="@+id/buttonRight"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@drawable/circle"
+            android:contentDescription="@string/rightbtn"
+            android:drawableTop="@drawable/right"
+            tools:ignore="RedundantDescriptionCheck" />
+
+    <!-- Fila 3 -->
+        <Button
+            android:id="@+id/buttonBackward"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@drawable/circle"
+            android:contentDescription="@string/backwardbtn"
+            android:drawableTop="@drawable/backward"
+            tools:ignore="RedundantDescriptionCheck" />
+
+    <!-- Fila 4 -->
+        <Button
+            android:id="@+id/buttonStop"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_margin="4dp"
+            android:text="@string/stop" />
+</GridLayout>
+</RelativeLayout>
