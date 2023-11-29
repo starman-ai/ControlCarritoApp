@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             if (bluetoothSocket == null) {
                 BluetoothDevice device = null;
                 for (BluetoothDevice pairedDevice : bluetoothAdapter.getBondedDevices()) {
-                    if (pairedDevice.getName().equals("BT-MCQUEEN")) {
+                    if (pairedDevice.getName().equals("BT-McQueen")) {
                         device = pairedDevice;
                         break;
                     }
@@ -67,23 +67,28 @@ public class MainActivity extends AppCompatActivity {
 
         // Comandos a enviar por botones
         buttonForward.setOnClickListener(v -> {
-            sendCommand("0"); // Avanzar
+            sendCommand((byte) '0'); // Avanzar
+            showToast("Avanzando");
         });
 
         buttonBackward.setOnClickListener(v -> {
-            sendCommand("1"); // Retroceder
+            sendCommand((byte) '1'); // Retroceder
+            showToast("Retrocediendo");
         });
 
         buttonLeft.setOnClickListener(v -> {
-            sendCommand("3"); // Izquierda
+            sendCommand((byte) '3'); // Izquierda
+            showToast("Girando a la izquierda");
         });
 
         buttonRight.setOnClickListener(v -> {
-            sendCommand("2"); // Derecha
+            sendCommand((byte) '2'); // Derecha
+            showToast("Girando a la derecha");
         });
 
         buttonStop.setOnClickListener(v -> {
-            sendCommand("4"); // Detener
+            sendCommand((byte) '4'); // Detener
+            showToast("STOP");
         });
     }
 
@@ -101,10 +106,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void sendCommand(String command) {
+    private void sendCommand(byte command) {
         try {
             if (outputStream != null) {
-                outputStream.write(command.getBytes());
+                outputStream.write(command);
             }
         } catch (Exception e) {
             showToast("Error enviando el comando: " + e.getMessage());
